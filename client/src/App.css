@@ -1,0 +1,31 @@
+.App {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 670px) {
+  .container {
+    width: 90%;
+  }
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.custom-margin {
+  margin-top: 5em;
+}
