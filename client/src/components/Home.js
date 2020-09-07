@@ -9,9 +9,6 @@ function Home () {
   // default state for app
   const [usersArray, setUsersArray] = useState ([]);
 
-  const abortController = new AbortController ();
-  const signal = abortController.signal;
-
   // API call to get all users
   async function fetchData () {
     await axios
@@ -26,9 +23,8 @@ function Home () {
   useEffect (
     () => {
       fetchData ();
-      return abortController.abort ();
     },
-    [usersArray, abortController]
+    [usersArray]
   );
 
   // Event handler to delete users
