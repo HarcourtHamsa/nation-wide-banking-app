@@ -9,15 +9,17 @@ function Home () {
   // default state for app
   const [usersArray, setUsersArray] = useState ([]);
 
+  async function fetchData () {
+    const res = await axios.get ('/api/users');
+    return res.data;
+  }
+
   // Note: the empty deps array [] means
   // this useEffect will run once
   // similar to componentDidMount()
   useEffect (() => {
-    axios
-      .get ('/api/users')
-      .then (res => {
-        setUsersArray (Object.values (res.data));
-      })
+    fetchData ()
+      .then (res => setUsersArray (Object.values (res)))
       .catch (err => console.log (err));
   }, []);
 
