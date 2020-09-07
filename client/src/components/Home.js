@@ -20,12 +20,9 @@ function Home () {
   }
 
   // ComponentDidMount
-  useEffect (
-    () => {
-      fetchData ();
-    },
-    [usersArray]
-  );
+  useEffect (() => {
+    fetchData ();
+  });
 
   // Event handler to delete users
   function handleDeleteUser (id) {
