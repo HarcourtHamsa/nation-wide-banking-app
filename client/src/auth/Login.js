@@ -79,7 +79,7 @@ function Login () {
       <InfoCard />
       <NavBar />
       <main className="container mt-5 mb-5 " id="login-form">
-        <h5 className="mb-5">
+        <h5 className="mb-5 text-primary">
           <RiGlobalLine size="30" /> Nation Wide
         </h5>
 
