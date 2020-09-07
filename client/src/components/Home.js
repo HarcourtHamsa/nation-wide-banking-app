@@ -19,10 +19,12 @@ function Home () {
       .catch (err => console.log (err));
   }
 
-  // ComponentDidMount
+  // Note: the empty deps array [] means
+  // this useEffect will run once
+  // similar to componentDidMount()
   useEffect (() => {
     fetchData ();
-  });
+  }, []);
 
   // Event handler to delete users
   function handleDeleteUser (id) {
