@@ -44,7 +44,10 @@ function Login () {
   };
 
   async function loginUser (data) {
-    const res = await axios.post ('/api/users/login', data);
+    const res = await axios.post (
+      '/api/users/login',
+      data
+    );
     return res.data;
   }
 
