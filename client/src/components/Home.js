@@ -15,7 +15,7 @@ function Home () {
   // API call to get all users
   async function fetchData () {
     await axios
-      .get ('http://localhost:5000/api/users', {signal})
+      .get ('/api/users', {signal})
       .then (res => {
         setUsersArray (Object.values (res.data));
       })
@@ -34,7 +34,7 @@ function Home () {
   // Event handler to delete users
   function handleDeleteUser (id) {
     axios
-      .delete ('http://localhost:5000/api/users/delete/' + id, {signal})
+      .delete ('/api/users/delete/' + id, {signal})
       .then (setUsersArray (usersArray.filter (user => user.id !== id)))
       .catch (err => console.log (err));
   }

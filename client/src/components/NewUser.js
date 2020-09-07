@@ -21,7 +21,7 @@ function NewUser () {
     const formData = new FormData (e.target);
 
     axios
-      .post ('http://localhost:5000/api/users/add', formData)
+      .post ('/api/users/add', formData)
       .then (setRedirectUser (true))
       .catch (err => console.log (err));
   };
