@@ -12,7 +12,7 @@ function Home () {
   // API call to get all users
   async function fetchData () {
     await axios
-      .get ('/api/users', {signal})
+      .get ('/api/users')
       .then (res => {
         setUsersArray (Object.values (res.data));
       })
@@ -30,7 +30,7 @@ function Home () {
   // Event handler to delete users
   function handleDeleteUser (id) {
     axios
-      .delete ('/api/users/delete/' + id, {signal})
+      .delete ('/api/users/delete/' + id)
       .then (setUsersArray (usersArray.filter (user => user.id !== id)))
       .catch (err => console.log (err));
   }
