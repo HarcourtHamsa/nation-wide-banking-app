@@ -9,19 +9,19 @@ function Home () {
   // default state for app
   const [usersArray, setUsersArray] = useState ([]);
 
-  async function fetchData () {
-    const res = await axios.get ('/api/users');
-    return Object.values (res.data);
-  }
-
   // Note: the empty deps array [] means
   // this useEffect will run once
   // similar to componentDidMount()
-  useEffect (() => {
-    fetchData ()
-      .then (res => setUsersArray (res))
-      .catch (err => console.log (err));
-  }, []);
+  useEffect (
+    () => {
+      axios
+        .get ('/api/users')
+        .then (res => Object.values (res.data))
+        .then (res => setUsersArray (res))
+        .catch (err => console.log (err));
+    },
+    [usersArray]
+  );
 
   // Event handler to delete users
   function handleDeleteUser (id) {
