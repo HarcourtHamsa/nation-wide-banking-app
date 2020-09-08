@@ -10,8 +10,8 @@ function Home () {
   const [usersArray, setUsersArray] = useState ([]);
 
   async function fetchData () {
-    const res = await axios.get ('/api/users');
-    return res.data;
+    const res = await axios.get ('http://localhost:5000/api/users');
+    return Object.values (res.data);
   }
 
   // Note: the empty deps array [] means
@@ -19,7 +19,7 @@ function Home () {
   // similar to componentDidMount()
   useEffect (() => {
     fetchData ()
-      .then (res => setUsersArray (Object.values (res)))
+      .then (res => setUsersArray (res))
       .catch (err => console.log (err));
   }, []);
 
