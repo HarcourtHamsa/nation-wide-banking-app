@@ -10,7 +10,7 @@ function Home () {
   const [usersArray, setUsersArray] = useState ([]);
 
   async function fetchData () {
-    const res = await axios.get ('http://localhost:5000/api/users');
+    const res = await axios.get ('/api/users');
     return Object.values (res.data);
   }
 
